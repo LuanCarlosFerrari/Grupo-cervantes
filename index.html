@@ -6,98 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Cervantes - Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .quadrant {
-            overflow: hidden;
-            position: relative;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    transitionProperty: {
+                        'transform': 'transform',
+                    },
+                }
+            }
         }
-
-        .quadrant img {
-            transition: transform 0.5s ease;
-        }
-
-        .quadrant:hover>img {
-            transform: scale(1.1);
-        }
-    </style>
+    </script>
 </head>
 
 <body class="relative h-screen w-screen overflow-hidden font-sans text-white bg-[#0a0a0a]">
-    <!-- Header discreto e transparente -->
+
+    <!-- Header -->
     <header class="absolute top-0 left-0 right-0 z-30 p-4 bg-black/60 backdrop-blur-sm">
         <div class="container mx-auto flex flex-col items-center">
             <div class="text-sm font-light tracking-wide text-center">
                 <span class="text-white/90">Grupo Cervantes</span>
-                <span class="text-white/50 mx-2">|</span>
-                <span class="text-white/70">Excelência em Serviços</span>
             </div>
             <nav class="mt-2 flex space-x-6">
-                <a href="#" class="text-xs text-white/80 hover:text-white transition duration-300">Sobre Nós</a>
-                <a href="#" class="text-xs text-white/80 hover:text-white transition duration-300">Contato</a>
-                <a href="#" class="text-xs text-white/80 hover:text-white transition duration-300">Localização</a>
+                <a href="#" class="text-xs text-white/80 hover:text-white transition">Sobre Nós</a>
+                <a href="#" class="text-xs text-white/80 hover:text-white transition">Contato</a>
+                <a href="#" class="text-xs text-white/80 hover:text-white transition">Localização</a>
             </nav>
         </div>
     </header>
 
-    <!-- Quadrantes com descrições adicionais -->
-    <div class="absolute top-0 left-0 w-1/2 h-1/2 group cursor-pointer quadrant transition duration-500"
-        onclick="window.open('https://site1.com', '_blank')">
-        <img src="assets/wood.png" alt="Madeira"
-            class="absolute inset-0 w-full h-full object-cover opacity-30 transition duration-500">
-        <div
-            class="relative z-10 flex flex-col items-center justify-center h-full w-full bg-[#e76038]/50 hover:bg-[#e76038]/70 transition duration-500">
-            <span class="text-2xl font-bold">Madeireira</span>
-            <p class="text-sm opacity-80 mt-1">Produtos em madeira e construção</p>
+    <!-- Quadrantes -->
+    <div class="grid grid-cols-2 grid-rows-2 h-full w-full">
+        <div onclick="window.open('https://site1.com', '_blank')" class="relative overflow-hidden group cursor-pointer">
+            <img src="assets/wood.png" alt="Madeira"
+                class="absolute inset-0 w-full h-full object-cover opacity-30 transition-transform duration-500 ease-in-out group-hover:scale-110">
+            <div
+                class="relative z-10 flex flex-col items-center justify-center h-full w-full text-center bg-[#e76038]/50 hover:bg-[#e76038]/70 transition">
+                <span class="text-lg sm:text-xl md:text-2xl font-bold px-2">Madeireira</span>
+                <p class="text-xs sm:text-sm opacity-80 mt-1 px-2">Produtos em madeira e construção</p>
+            </div>
         </div>
+
+        <div onclick="window.open('https://site2.com', '_blank')" class="relative overflow-hidden group cursor-pointer">
+            <img src="assets/gas.png" alt="Gás"
+                class="absolute inset-0 w-full h-full object-cover opacity-30 transition-transform duration-500 ease-in-out group-hover:scale-110">
+            <div
+                class="relative z-10 flex flex-col items-center justify-center h-full w-full text-center bg-[#0aa1e8]/50 hover:bg-[#0aa1e8]/70 transition">
+                <span class="text-lg sm:text-xl md:text-2xl font-bold px-2">Posto de Gasolina</span>
+                <p class="text-xs sm:text-sm opacity-80 mt-1 px-2">Combustíveis e serviços automotivos</p>
+            </div>
+        </div>
+        <div onclick="window.open('https://site3.com', '_blank')" class="relative overflow-hidden group cursor-pointer">
+            <img src="assets/tools.png" alt="Ferramentas"
+                class="absolute inset-0 w-full h-full object-cover opacity-30 transition-transform duration-500 ease-in-out group-hover:scale-110">
+            <div
+                class="relative z-10 flex flex-col items-center justify-center h-full w-full text-center bg-[#0d5e95]/50 hover:bg-[#0d5e95]/70 transition">
+                <span class="text-lg sm:text-xl md:text-2xl font-bold px-2">Materiais de Construção</span>
+                <p class="text-xs sm:text-sm opacity-80 mt-1 px-2">Ferramentas e suprimentos diversos</p>
+            </div>
+        </div>
+
+        <div onclick="window.open('https://transval.com.br/', '_blank')"
+            class="relative overflow-hidden group cursor-pointer">
+            <img src="assets/transport.png" alt="Transporte"
+                class="absolute inset-0 w-full h-full object-cover opacity-30 transition-transform duration-500 ease-in-out group-hover:scale-110">
+            <div
+                class="relative z-10 flex flex-col items-center justify-center h-full w-full text-center bg-[#3884a2]/50 hover:bg-[#3884a2]/70 transition">
+                <span class="text-lg sm:text-xl md:text-2xl font-bold px-2">Transportadora</span>
+                <p class="text-xs sm:text-sm opacity-80 mt-1 px-2">Logística e entrega de cargas</p>
+            </div>
+        </div>
+
     </div>
 
-    <div class="absolute top-0 right-0 w-1/2 h-1/2 group cursor-pointer quadrant transition duration-500"
-        onclick="window.open('https://site2.com', '_blank')">
-        <img src="assets/gas.png" alt="Gás"
-            class="absolute inset-0 w-full h-full object-cover opacity-30 transition duration-500">
-        <div
-            class="relative z-10 flex flex-col items-center justify-center h-full w-full bg-[#0aa1e8]/50 hover:bg-[#0aa1e8]/70 transition duration-500">
-            <span class="text-2xl font-bold">Posto de Gasolina</span>
-            <p class="text-sm opacity-80 mt-1">Combustíveis e serviços automotivos</p>
-        </div>
-    </div>
-
-    <div class="absolute bottom-0 left-0 w-1/2 h-1/2 group cursor-pointer quadrant transition duration-500"
-        onclick="window.open('https://site3.com', '_blank')">
-        <img src="assets/tools.png" alt="Ferramentas"
-            class="absolute inset-0 w-full h-full object-cover opacity-30 transition duration-500">
-        <div
-            class="relative z-10 flex flex-col items-center justify-center h-full w-full bg-[#0d5e95]/50 hover:bg-[#0d5e95]/70 transition duration-500">
-            <span class="text-2xl font-bold">Materiais de Construção</span>
-            <p class="text-sm opacity-80 mt-1">Ferramentas e suprimentos diversos</p>
-        </div>
-    </div>
-    <div class="absolute bottom-0 right-0 w-1/2 h-1/2 group cursor-pointer quadrant transition duration-500"
-        onclick="window.open('https://transval.com.br/', '_blank')">
-        <img src="assets/transport.png" alt="Transporte"
-            class="absolute inset-0 w-full h-full object-cover opacity-30 transition duration-500">
-        <div
-            class="relative z-10 flex flex-col items-center justify-center h-full w-full bg-[#3884a2]/50 hover:bg-[#3884a2]/70 transition duration-500">
-            <span class="text-2xl font-bold">Transportadora</span>
-            <p class="text-sm opacity-80 mt-1">Logística e entrega de cargas</p>
-        </div>
-    </div> <!-- Logo Central -->
+    <!-- Logo Central -->
     <div
         class="absolute top-1/2 left-1/2 w-72 h-72 md:w-96 md:h-96 rounded-full flex items-center justify-center shadow-2xl transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur">
         <img src="assets/brasao.png" alt="Logo Cervantes" class="w-2/3 h-2/3 object-contain">
     </div>
 
-    <!-- Rodapé discreto -->
+    <!-- Rodapé -->
     <footer
         class="absolute bottom-0 left-0 right-0 text-center text-xs text-white bg-black/70 backdrop-blur-md py-3 z-30">
-        <div class="container mx-auto flex justify-center items-center space-x-6">
+        <div class="container mx-auto flex justify-center items-center">
             <p class="text-white/90">Grupo Cervantes © 2025 - Todos os direitos reservados</p>
-            <div class="flex space-x-4">
-                <a href="#" class="text-white/80 hover:text-white transition">Política de Privacidade</a>
-                <a href="#" class="text-white/80 hover:text-white transition">Termos de Uso</a>
-            </div>
         </div>
     </footer>
+
 </body>
 
 </html>
