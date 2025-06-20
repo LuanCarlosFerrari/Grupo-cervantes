@@ -100,7 +100,7 @@ const empresasLocalizacoes = [{
     telefone: '(67) 3239-1744',
     horario: 'Seg-Sex 7h-17h',
     coordenadas: [-20.4500, -52.8700], // Mesmo local do posto
-    icone: 'transport',
+    icone: 'gas',
     cor: '#4169E1'
 }, {
     id: 'transval',
@@ -121,6 +121,17 @@ const empresasLocalizacoes = [{
     telefone: 'Em breve',
     horario: 'Seg-Sex 7h-18h',
     coordenadas: [-16.505191, -54.647976], // Rondonópolis, MT
+    icone: 'transport',
+    cor: '#DC143C'
+},
+{
+    id: 'transval-sumare',
+    nome: 'Transval - Sumaré',
+    subtitulo: 'Unidade São Paulo',
+    endereco: 'Sumaré, SP<br>CEP: 13170-000',
+    telefone: 'Em breve',
+    horario: 'Seg-Sex 7h-18h',
+    coordenadas: [-22.821837, -47.269404], // Sumaré, SP
     icone: 'transport',
     cor: '#DC143C'
 }
@@ -403,11 +414,18 @@ function mostrarErroMapa() {
  */
 function adicionarBotoesNavegacao() {
     const container = document.getElementById('botoes-navegacao');
-    if (container) {
-        // Separar empresas por categorias
-        const lojas = empresasLocalizacoes.filter(e => e.icone === 'wood');
+    if (container) {        // Separar empresas por categorias
+        const lojas = empresasLocalizacoes.filter(e => e.icone === 'wood')
+            .sort((a, b) => {
+                // Matriz sempre primeiro
+                if (a.id === 'matriz') return -1;
+                if (b.id === 'matriz') return 1;
+                // Demais em ordem alfabética
+                return a.nome.localeCompare(b.nome);
+            });
         const transportadoras = empresasLocalizacoes.filter(e => e.icone === 'transport');
-        const outrasEmpresas = empresasLocalizacoes.filter(e => !['wood', 'transport'].includes(e.icone));
+        const outrasEmpresas = empresasLocalizacoes.filter(e => !['wood', 'transport'].includes(e.icone))
+            .sort((a, b) => a.nome.localeCompare(b.nome));
 
         container.innerHTML = `
             <div style="text-align: center; margin: 16px 0;">
@@ -444,12 +462,10 @@ function adicionarBotoesNavegacao() {
                                 </option>
                             `).join('')}
                         </select>
-                    </div>
-
-                    <!-- Select Transportadoras -->
+                    </div>                    <!-- Select Transportadoras -->
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
                         <label style="color: rgba(255,255,255,0.6); font-size: 12px; font-weight: 500;">
-                            Transporte & Logística
+                            Transportadoras
                         </label>
                         <select onchange="handleSelectNavegacao(this.value, this)" 
                                 style="
@@ -474,9 +490,7 @@ function adicionarBotoesNavegacao() {
                                 </option>
                             `).join('')}
                         </select>
-                    </div>
-
-                    <!-- Select Outras Empresas -->
+                    </div>                    <!-- Select Outras Empresas -->
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
                         <label style="color: rgba(255,255,255,0.6); font-size: 12px; font-weight: 500;">
                             Combustíveis & Agropecuária
