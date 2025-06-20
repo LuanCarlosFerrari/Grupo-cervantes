@@ -1,0 +1,36 @@
+{
+  "name": "grupo-cervantes-portal",
+  "version": "1.0.0",
+  "description": "Portal oficial do Grupo Cervantes - Interface web interativa apresentando todas as empresas do grupo",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "dev": "live-server --port=3000 --watch=src/",
+    "build": "echo 'No build process required for static site'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "grupo-cervantes",
+    "portal",
+    "website",
+    "empresas",
+    "construção",
+    "posto",
+    "pecuária",
+    "transporte",
+    "static-site"
+  ],
+  "author": "Grupo Cervantes",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grupo-cervantes/portal.git"
+  },
+  "homepage": "https://grupo-cervantes.github.io/portal",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

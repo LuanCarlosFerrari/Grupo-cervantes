@@ -1,0 +1,79 @@
+/* 
+ * GRUPO CERVANTES - PORTAL OFICIAL
+ * Estilos customizados para interface interativa
+ * 
+ * Estrutura:
+ * 1. Animações e efeitos visuais
+ * 2. Classes utilitárias customizadas
+ * 3. Responsividade
+ * 4. Compatibilidade cross-browser
+ */
+
+/* ========================================
+   1. ANIMAÇÕES E EFEITOS VISUAIS
+======================================== */
+
+/* Animação de brilho para o brasão central */
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+    }
+}
+
+/* Classe para aplicar brilho animado no brasão */
+.brasao-glow {
+    animation: glow 3s ease-in-out infinite;
+}
+
+/* ========================================
+   2. CLASSES UTILITÁRIAS CUSTOMIZADAS
+======================================== */
+
+/* Efeitos hover para quadrantes */
+.quadrante-hover:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Estilo específico para o polígono da Transval */
+.transval-polygon {
+    transition: all 0.3s ease;
+}
+
+.transval-polygon:hover {
+    transform: scale(1.05) translateX(-50%);
+}
+
+/* Gradiente personalizado para fundos */
+.bg-cervantes-gradient {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+}
+
+/* Sombras customizadas */
+.custom-shadow {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   3. RESPONSIVIDADE
+======================================== */
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .mobile-text-adjust {
+        font-size: 0.875rem;
+    }
+}
+
+/* ========================================
+   4. COMPATIBILIDADE CROSS-BROWSER
+======================================== */
+
+/* Backdrop blur para navegadores mais antigos */
+.custom-backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
