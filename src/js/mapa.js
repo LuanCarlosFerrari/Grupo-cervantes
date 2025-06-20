@@ -143,23 +143,19 @@ function inicializarMapa() {
             throw new Error('Container do mapa não encontrado');
         }
 
-        console.log('Container encontrado, criando mapa...');
-
-        // Criar o mapa
+        console.log('Container encontrado, criando mapa...');        // Criar o mapa
         mapaGrupoCervantes = L.map('mapa-cervantes', {
             center: MAP_CONFIG.center,
             zoom: MAP_CONFIG.zoom,
             minZoom: MAP_CONFIG.minZoom,
             maxZoom: MAP_CONFIG.maxZoom,
             zoomControl: true,
-            scrollWheelZoom: true
+            scrollWheelZoom: true,
+            attributionControl: false // Remove o controle de atribuição
         });
 
-        console.log('Mapa criado, adicionando tiles...');
-
-        // Adicionar camada de tiles (OpenStreetMap)
+        console.log('Mapa criado, adicionando tiles...');        // Adicionar camada de tiles (OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             maxZoom: 18
         }).addTo(mapaGrupoCervantes);
 
