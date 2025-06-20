@@ -36,9 +36,9 @@
         <section class="mb-8">
             <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
                 <h2 class="text-xl font-bold mb-4 text-center">Selecione uma Unidade</h2>
-                <div class="max-w-2xl mx-auto">
-                    <select id="unidadeSelect" onchange="mostrarUnidade()"
-                        class="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-white/40 focus:outline-none">
+                <div class="max-w-2xl mx-auto"> <select id="unidadeSelect" onchange="mostrarUnidade()"
+                        class="w-full p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none"
+                        style="background-color: white; color: black;">
                         <option value="">Todas as Unidades</option>
                         <optgroup label="Materiais de Construção">
                             <option value="matriz">Cervantes - Matriz (Rinópolis)</option>
@@ -55,6 +55,7 @@
                         <optgroup label="Transporte & Logística">
                             <option value="transval-rinopolis">Transval - Rinópolis</option>
                             <option value="transval-rondonopolis">Transval - Rondonópolis</option>
+                            <option value="transval-sumare">Transval - Sumaré</option>
                         </optgroup>
                     </select>
                 </div>
@@ -231,6 +232,30 @@
                     </div>
                 </div>
 
+                <!-- Transval Sumaré -->
+                <div id="transval-sumare" class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:col-span-2 unidade-card"
+                    data-categoria="transporte" data-keywords="transval sumare sao paulo transportadora logistica">
+                    <div class="flex items-center mb-4">
+                        <img src="public/images/transport.png" alt="Transporte" class="w-12 h-12 mr-4 opacity-80">
+                        <div>
+                            <h3 class="text-xl font-bold">Transval - Sumaré</h3>
+                            <p class="text-white/80">Unidade São Paulo</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="space-y-2 text-white/90">
+                            <p><span class="font-semibold">Telefone:</span> Em breve</p>
+                            <p><span class="font-semibold">Endereço:</span> Sumaré, SP</p>
+                            <p><span class="font-semibold">Cidade:</span> Sumaré, SP - CEP: 13170-000</p>
+                        </div>
+                        <div class="space-y-2 text-white/90">
+                            <p><span class="font-semibold">Horário:</span> Seg-Sex 7h-18h</p>
+                            <p><span class="font-semibold">Serviços:</span> Transporte Regional SP</p>
+                            <p><span class="font-semibold">Cobertura:</span> Sudeste</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -243,26 +268,26 @@
                         <div>
                             <label class="block text-white/90 mb-2">Nome Completo</label>
                             <input type="text"
-                                class="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-white/40 focus:outline-none"
-                                placeholder="Seu nome completo">
+                                class="w-full p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none"
+                                style="background-color: white; color: black;" placeholder="Seu nome completo">
                         </div>
                         <div>
                             <label class="block text-white/90 mb-2">E-mail</label>
                             <input type="email"
-                                class="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-white/40 focus:outline-none"
-                                placeholder="seu@email.com">
+                                class="w-full p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none"
+                                style="background-color: white; color: black;" placeholder="seu@email.com">
                         </div>
                     </div>
                     <div class="grid md:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-white/90 mb-2">Telefone</label>
                             <input type="tel"
-                                class="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-white/40 focus:outline-none"
-                                placeholder="(XX) XXXXX-XXXX">
+                                class="w-full p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none"
+                                style="background-color: white; color: black;" placeholder="(XX) XXXXX-XXXX">
                         </div>
-                        <div>
-                            <label class="block text-white/90 mb-2">Empresa</label> <select
-                                class="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-white/40 focus:outline-none">
+                        <div> <label class="block text-white/90 mb-2">Empresa</label> <select
+                                class="w-full p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none"
+                                style="background-color: white; color: black;">
                                 <option value="">Selecione a empresa</option>
                                 <option value="matriz">Cervantes - Matriz (Rinópolis)</option>
                                 <option value="parapua">Cervantes - Parapuã</option>
@@ -274,6 +299,7 @@
                                 <option value="trr">TRR Cervantes</option>
                                 <option value="transval">Transval - Rinópolis</option>
                                 <option value="transval-rondonopolis">Transval - Rondonópolis</option>
+                                <option value="transval-sumare">Transval - Sumaré</option>
                                 <option value="geral">Grupo Cervantes - Geral</option>
                             </select>
                         </div>
@@ -281,13 +307,14 @@
                     <div>
                         <label class="block text-white/90 mb-2">Assunto</label>
                         <input type="text"
-                            class="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-white/40 focus:outline-none"
-                            placeholder="Assunto da mensagem">
+                            class="w-full p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none"
+                            style="background-color: white; color: black;" placeholder="Assunto da mensagem">
                     </div>
                     <div>
                         <label class="block text-white/90 mb-2">Mensagem</label>
                         <textarea rows="5"
-                            class="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-white/40 focus:outline-none resize-none"
+                            class="w-full p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none resize-none"
+                            style="background-color: white; color: black;"
                             placeholder="Digite sua mensagem aqui..."></textarea>
                     </div>
                     <div class="text-center">
