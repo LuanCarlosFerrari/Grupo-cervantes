@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
 
-<body class="relative min-h-screen font-sans text-white bg-[#0a0a0a]">
-
-    <!-- Header -->
-    <header class="absolute top-0 left-0 right-0 z-30 p-2 md:p-4 bg-black/70 backdrop-blur-sm">
+<body class="relative min-h-screen font-sans text-white bg-[#0a0a0a]"> <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-30 p-2 md:p-4 bg-black/70 backdrop-blur-sm">
         <div class="max-w-6xl mx-auto flex flex-col items-center">
             <nav class="flex space-x-4 md:space-x-6">
                 <a href="index.html"
@@ -32,37 +30,51 @@
         <section class="text-center mb-12">
             <h1 class="text-3xl md:text-5xl font-bold mb-4">Grupo Cervantes</h1>
             <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
-                Tradição, qualidade e compromisso em diversos segmentos há mais de três décadas.
+                Mais de 40 anos de tradição, qualidade e compromisso com a excelência em múltiplos setores.
             </p>
-        </section>
-
-        <!-- História -->
+        </section> <!-- História -->
         <section class="mb-16">
             <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:p-8">
                 <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Nossa História</h2>
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <p class="text-white/90 mb-4 leading-relaxed">
-                            O Grupo Cervantes nasceu com o propósito de atender às necessidades do mercado com
-                            excelência e dedicação. Ao longo dos anos, expandimos nossos negócios para diferentes
-                            segmentos, sempre mantendo nossos valores fundamentais.
-                        </p>
-                        <p class="text-white/90 mb-4 leading-relaxed">
-                            Começamos no setor de materiais de construção e, com o crescimento sustentável,
-                            diversificamos para combustíveis, pecuária e transporte, criando um grupo sólido
-                            e confiável.
-                        </p>
-                    </div>
-                    <div class="bg-white/10 rounded-lg p-6">
-                        <h3 class="text-xl font-bold mb-4">Nossos Valores</h3>
-                        <ul class="space-y-2 text-white/90">
-                            <li>✓ Compromisso com a qualidade</li>
-                            <li>✓ Responsabilidade social</li>
-                            <li>✓ Inovação constante</li>
-                            <li>✓ Sustentabilidade</li>
-                            <li>✓ Transparência</li>
-                        </ul>
-                    </div>
+                <div class="space-y-6 text-white/90 leading-relaxed text-center">
+                    <p>
+                        Com raízes fincadas na cidade de Rinópolis, interior de São Paulo, a história do Grupo Cervantes
+                        começou há mais de 40 anos, quando dois irmãos decidiram empreender a partir daquilo que
+                        conheciam bem: a madeira. Com trabalho árduo, dedicação e espírito visionário, iniciaram uma
+                        pequena revenda de madeira, atendendo à comunidade local e cidades vizinhas.
+                    </p>
+                    <p>
+                        O sucesso do negócio motivou a expansão. Logo, os irmãos abriram as primeiras lojas de materiais
+                        de construção, sempre prezando pela qualidade dos produtos e pelo atendimento próximo e
+                        familiar. Com o crescimento das lojas, surgiu a necessidade de transportar mercadorias com mais
+                        agilidade — e assim foram adquiridos os primeiros caminhões, que mais tarde dariam origem à
+                        transportadora do grupo, atendendo com eficiência a diversas regiões.
+                    </p>
+                    <p>
+                        Enquanto os negócios se fortaleciam no setor urbano, a tradição rural da família nunca foi
+                        deixada de lado. Desde os primeiros anos, o manejo de gado fazia parte da rotina, atividade que
+                        também evoluiu ao longo do tempo. A pecuária passou a ser tratada com foco em melhoramento
+                        genético, e hoje o Grupo Cervantes atua com excelência nas fases de cria, recria e engorda,
+                        contribuindo com a produção de qualidade e sustentabilidade no campo.
+                    </p>
+                    <p>
+                        Sempre com os pés firmes em Rinópolis, o grupo continuou diversificando seus negócios.
+                        Investindo no setor de energia e mobilidade, construíram um posto de combustíveis moderno, com
+                        infraestrutura de ponta e atendimento diferenciado. Mais recentemente, expandiram ainda mais
+                        essa frente com a abertura de um TRR (Transportador, Revendedor e Retalhista), ampliando sua
+                        capacidade de distribuição e atendimento a produtores e empresas da região.
+                    </p>
+                </div>
+
+                <div class="mt-8 bg-white/10 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-center">Segunda Geração</h3>
+                    <p class="text-white/90 leading-relaxed text-center">
+                        Atualmente, o Grupo Cervantes vive um novo capítulo de sua trajetória, com a entrada da segunda
+                        geração. Os filhos dos fundadores passaram a integrar a gestão dos negócios, atuando lado a lado
+                        e contribuindo com novas ideias, inovação e visão de futuro. Essa transição, construída de forma
+                        conjunta e sólida, reforça o compromisso da família Cervantes com a continuidade, a solidez e o
+                        crescimento sustentável do grupo.
+                    </p>
                 </div>
             </div>
         </section>
@@ -70,101 +82,99 @@
         <!-- Nossas Empresas -->
         <section class="mb-16">
             <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Nossas Empresas</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- Cervantes Materiais -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"> <!-- Cervantes Materiais -->
                 <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 hover:bg-white/10 transition-all">
-                    <img src="public/images/wood.png" alt="Materiais" class="w-16 h-16 mx-auto mb-4 opacity-80">
+                    <img src="public/images/wood.png" alt="Materiais"
+                        class="w-16 h-16 mx-auto mb-4 opacity-80 rounded-full">
                     <h3 class="text-xl font-bold mb-2 text-center">Cervantes</h3>
                     <p class="text-center text-white/80 mb-3">Materiais para Construção</p>
-                    <p class="text-sm text-white/70 leading-relaxed">
-                        Fornecemos materiais de construção de alta qualidade para obras residenciais e comerciais.
+                    <p class="text-sm text-white/70 leading-relaxed text-center">
+                        Desde a origem com madeira até a completa linha de materiais de construção,
+                        mantendo a tradição de qualidade e atendimento familiar.
                     </p>
                 </div>
 
                 <!-- Auto Posto -->
                 <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 hover:bg-white/10 transition-all">
-                    <img src="public/images/gas.png" alt="Auto Posto" class="w-16 h-16 mx-auto mb-4 opacity-80">
+                    <img src="public/images/gas.png" alt="Auto Posto"
+                        class="w-16 h-16 mx-auto mb-4 opacity-80 rounded-full">
                     <h3 class="text-xl font-bold mb-2 text-center">Cervantes</h3>
                     <p class="text-center text-white/80 mb-3">Auto Posto</p>
-                    <p class="text-sm text-white/70 leading-relaxed">
-                        Posto de combustíveis moderno com produtos de qualidade e atendimento diferenciado.
+                    <p class="text-sm text-white/70 leading-relaxed text-center">
+                        Posto moderno com infraestrutura de ponta, investindo no setor de energia
+                        e mobilidade com atendimento diferenciado.
                     </p>
                 </div>
 
                 <!-- BC Pecuária -->
                 <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 hover:bg-white/10 transition-all">
-                    <img src="public/images/cow.png" alt="Pecuária" class="w-16 h-16 mx-auto mb-4 opacity-80">
+                    <img src="public/images/cow.png" alt="Pecuária"
+                        class="w-16 h-16 mx-auto mb-4 opacity-80 rounded-full">
                     <h3 class="text-xl font-bold mb-2 text-center">BC Pecuária</h3>
                     <p class="text-center text-white/80 mb-3">Cria, Recria e Engorda</p>
-                    <p class="text-sm text-white/70 leading-relaxed">
-                        Especializada no ciclo completo da pecuária bovina com manejo sustentável.
+                    <p class="text-sm text-white/70 leading-relaxed text-center">
+                        Tradição rural da família com foco em melhoramento genético,
+                        atuando com excelência e sustentabilidade no campo.
                     </p>
                 </div>
 
                 <!-- TRR Cervantes -->
                 <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 hover:bg-white/10 transition-all">
-                    <img src="public/images/transport.png" alt="TRR" class="w-16 h-16 mx-auto mb-4 opacity-80">
+                    <img src="public/images/transport.png" alt="TRR"
+                        class="w-16 h-16 mx-auto mb-4 opacity-80 rounded-full">
                     <h3 class="text-xl font-bold mb-2 text-center">TRR Cervantes</h3>
                     <p class="text-center text-white/80 mb-3">Produtos de Petróleo</p>
-                    <p class="text-sm text-white/70 leading-relaxed">
-                        Distribuição especializada de combustíveis e produtos derivados de petróleo.
+                    <p class="text-sm text-white/70 leading-relaxed text-center">
+                        Transportador, Revendedor e Retalhista ampliando a capacidade de
+                        distribuição para produtores e empresas da região.
                     </p>
                 </div>
 
                 <!-- Transval -->
                 <div
                     class="bg-white/5 backdrop-blur-md rounded-lg p-6 hover:bg-white/10 transition-all sm:col-span-2 lg:col-span-1">
-                    <img src="public/images/transport.png" alt="Transporte" class="w-16 h-16 mx-auto mb-4 opacity-80">
+                    <img src="public/images/transport.png" alt="Transporte"
+                        class="w-16 h-16 mx-auto mb-4 opacity-80 rounded-full">
                     <h3 class="text-xl font-bold mb-2 text-center">Transval</h3>
                     <p class="text-center text-white/80 mb-3">Transportadora</p>
-                    <p class="text-sm text-white/70 leading-relaxed">
-                        Soluções completas em transporte e logística para diversos segmentos.
+                    <p class="text-sm text-white/70 leading-relaxed text-center">
+                        Nascida da necessidade de transportar mercadorias com agilidade,
+                        hoje oferece soluções completas em logística para diversas regiões.
                     </p>
                 </div>
 
             </div>
-        </section>
-
-        <!-- Missão, Visão, Valores -->
+        </section> <!-- Missão, Visão, Valores -->
         <section class="mb-16">
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 text-center">
                     <h3 class="text-xl font-bold mb-4">Missão</h3>
                     <p class="text-white/80 leading-relaxed">
-                        Oferecer produtos e serviços de excelência, contribuindo para o desenvolvimento
-                        sustentável da região e satisfação de nossos clientes.
+                        Oferecer produtos e serviços de excelência com valores familiares,
+                        responsabilidade com a comunidade e compromisso com o desenvolvimento sustentável.
                     </p>
                 </div>
                 <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 text-center">
                     <h3 class="text-xl font-bold mb-4">Visão</h3>
                     <p class="text-white/80 leading-relaxed">
-                        Ser referência em nossos segmentos de atuação, reconhecidos pela qualidade,
-                        inovação e responsabilidade social.
+                        Ser referência em múltiplos setores — comércio, transporte, agropecuária e energia —
+                        mantendo a tradição familiar e a inovação da segunda geração.
                     </p>
                 </div>
                 <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 text-center">
                     <h3 class="text-xl font-bold mb-4">Valores</h3>
                     <p class="text-white/80 leading-relaxed">
-                        Ética, transparência, respeito ao meio ambiente, valorização das pessoas
-                        e compromisso com a excelência.
+                        Trabalho árduo, dedicação, espírito visionário, qualidade, atendimento familiar,
+                        sustentabilidade e compromisso com a continuidade.
                     </p>
                 </div>
             </div>
         </section>
 
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="bg-black/80 backdrop-blur py-8 mt-16">
+    </main> <!-- Rodapé -->
+    <footer class="bg-black/80 backdrop-blur py-2">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="text-white/90 mb-2">Grupo Cervantes © 2025 - Todos os direitos reservados</p>
-            <nav class="flex justify-center space-x-4">
-                <a href="index.html" class="text-white/60 hover:text-white transition text-sm">Início</a>
-                <a href="sobre-nos.html" class="text-white/60 hover:text-white transition text-sm">Sobre Nós</a>
-                <a href="contato.html" class="text-white/60 hover:text-white transition text-sm">Contato</a>
-                <a href="localizacao.html" class="text-white/60 hover:text-white transition text-sm">Localização</a>
-            </nav>
+            <p class="text-white/90 text-sm">Grupo Cervantes © 2025 - Todos os direitos reservados</p>
         </div>
     </footer>
 
