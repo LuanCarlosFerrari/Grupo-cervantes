@@ -11,10 +11,10 @@
 
 // Configurações do mapa
 const MAP_CONFIG = {
-    // Coordenadas centrais (Região de São Paulo - Interior)
-    center: [-22.1167, -50.3833], // Região central entre as cidades
-    zoom: 10,
-    minZoom: 8,
+    // Coordenadas centrais do Brasil (Centro geográfico do país)
+    center: [-14.2350, -51.9253], // Centro geográfico do Brasil
+    zoom: 5, // Zoom baixo para mostrar todo o território nacional
+    minZoom: 4, // Permite zoom ainda menor para ver todo o continente
     maxZoom: 18
 };
 
@@ -310,12 +310,22 @@ function criarConteudoPopup(empresa) {
 }
 
 /**
- * Ajusta a visualização do mapa para mostrar todos os marcadores
+ * Ajusta a visualização do mapa para mostrar todo o território nacional
+ * com os marcadores visíveis
  */
 function ajustarVisualizacao() {
     if (marcadores.length > 0) {
-        const grupo = new L.featureGroup(marcadores.map(m => m.marcador));
-        mapaGrupoCervantes.fitBounds(grupo.getBounds().pad(0.1));
+        // Define os limites do Brasil para visualização
+        const brasilBounds = [
+            [-33.7683, -73.9872], // Sudoeste (inclui extremo sul)
+            [5.2719, -28.6341]    // Nordeste (inclui extremo norte e leste)
+        ];
+
+        // Ajusta o mapa para mostrar o Brasil inteiro
+        mapaGrupoCervantes.fitBounds(brasilBounds, {
+            padding: [20, 20], // Adiciona um pouco de margem
+            maxZoom: 6 // Limita o zoom máximo para manter visão nacional
+        });
     }
 }
 
@@ -328,6 +338,23 @@ function focarEmpresa(empresaId) {
         mapaGrupoCervantes.setView(marcadorData.empresa.coordenadas, 16);
         marcadorData.marcador.openPopup();
     }
+}
+
+/**
+ * Foca em todas as empresas do grupo (zoom nas localizações)
+ */
+function focarEmpresas() {
+    if (marcadores.length > 0) {
+        const grupo = new L.featureGroup(marcadores.map(m => m.marcador));
+        mapaGrupoCervantes.fitBounds(grupo.getBounds().pad(0.1));
+    }
+}
+
+/**
+ * Volta para a visão do Brasil completo
+ */
+function voltarVistaNacional() {
+    ajustarVisualizacao();
 }
 
 /**
