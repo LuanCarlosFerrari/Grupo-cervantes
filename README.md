@@ -49,9 +49,32 @@ Portal web oficial do Grupo Cervantes, apresentando todas as empresas do grupo d
 
 ## 🛠️ Como executar
 
-1. Clone o repositório
-2. Abra o arquivo `index.html` em um navegador web
-3. Ou sirva os arquivos através de um servidor local
+### Servidor Local (Recomendado)
+```bash
+# Via Python (mais simples)
+python serve.py
+
+# Ou via Node.js (se tiver instalado)
+npx http-server . -p 8000 -o
+```
+
+### Servidor Manual
+Se preferir usar outro servidor:
+```bash
+# Python 3
+python -m http.server 8000
+
+# Node.js
+npm install -g http-server
+http-server . -p 8000
+```
+
+Após executar, acesse: `http://localhost:8000`
+
+### ⚠️ Importante
+- **Não abra os arquivos HTML diretamente no navegador** (file:///)
+- Use sempre um servidor local para funcionalidade completa
+- O mapa interativo requer servidor devido às políticas CORS
 
 ## 📞 Contato
 

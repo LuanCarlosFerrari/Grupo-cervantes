@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização - Grupo Cervantes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/css/styles.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" /> <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> <!-- Script do Mapa -->
+    <script src="src/js/mapa.js" defer></script>
+
+    <!-- Script de teste -->
+    <script>
+        console.log('Script de teste carregado');
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOM carregado no HTML');
+        });
+    </script>
+</head>
+
+<body class="relative min-h-screen font-sans text-white bg-[#0a0a0a]">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-30 p-2 md:p-4 bg-black/70 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto flex flex-col items-center">
+            <nav class="flex space-x-4 md:space-x-6">
+                <a href="index.html"
+                    class="text-[0.6rem] md:text-xs text-white/80 hover:text-white transition">Início</a>
+                <a href="sobre-nos.html"
+                    class="text-[0.6rem] md:text-xs text-white/80 hover:text-white transition">Sobre Nós</a>
+                <a href="contato.html"
+                    class="text-[0.6rem] md:text-xs text-white/80 hover:text-white transition">Contato</a>
+                <a href="localizacao.html"
+                    class="text-[0.6rem] md:text-xs text-white hover:text-white transition font-bold">Localização</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="pt-16 md:pt-20 px-4 md:px-8 max-w-6xl mx-auto"> <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Nossas Localizações</h1>
+            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+                Encontre a unidade mais próxima de você. Estamos estrategicamente localizados para melhor atendê-lo.
+            </p>
+        </section><!-- Mapa Interativo -->
+        <section class="mb-16">
+            <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-6 text-center">Mapa Interativo das Unidades</h2>
+
+                <!-- Botões de Navegação Rápida -->
+                <div id="botoes-navegacao"></div> <!-- Container do Mapa -->
+                <div id="mapa-cervantes" style="height: 400px; border: 2px solid #ccc; background: #f9f9f9;">
+                    <div
+                        style="display: flex; align-items: center; justify-content: center; height: 100%; color: #666;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 48px; margin-bottom: 16px;">🗺️</div>
+                            <p style="font-size: 18px;">Carregando mapa...</p>
+                        </div>
+                    </div>
+                </div> <!-- Instruções do Mapa -->
+                <div class="mt-4 text-center text-white/70 text-sm">
+                    <p>Clique nos marcadores para ver informações detalhadas</p>
+                    <p>Use os selects acima para focar em uma categoria específica ou visualize todas</p>
+                </div>
+            </div>
+        </section> <!-- Área de Atuação -->
+        <section class="mb-16">
+            <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Área de Atuação</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Cobertura Regional</h3>
+                        <ul class="space-y-2 text-white/90">
+                            <li>✓ 5 lojas no interior de São Paulo</li>
+                            <li>✓ Delivery para materiais de construção</li>
+                            <li>✓ Transporte especializado</li>
+                            <li>✓ Logística integrada MS/SP</li>
+                            <li>✓ Parcerias estratégicas</li>
+                            <li>✓ Auto posto e combustíveis</li>
+                            <li>✓ Atividades pecuárias</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">Raio de Atendimento</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span>Materiais de Construção:</span>
+                                <span class="font-semibold">Interior SP</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Auto Posto:</span>
+                                <span class="font-semibold">BR-262 MS</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Pecuária:</span>
+                                <span class="font-semibold">Regional MS</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Produtos de Petróleo:</span>
+                                <span class="font-semibold">200 km</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Transportadora:</span>
+                                <span class="font-semibold">Nacional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-black/80 backdrop-blur py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-white/90 mb-2">Grupo Cervantes © 2025 - Todos os direitos reservados</p>
+            <nav class="flex justify-center space-x-4">
+                <a href="index.html" class="text-white/60 hover:text-white transition text-sm">Início</a>
+                <a href="sobre-nos.html" class="text-white/60 hover:text-white transition text-sm">Sobre Nós</a>
+                <a href="contato.html" class="text-white/60 hover:text-white transition text-sm">Contato</a>
+                <a href="localizacao.html" class="text-white/60 hover:text-white transition text-sm">Localização</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -13,21 +13,6 @@
    1. ANIMAÇÕES E EFEITOS VISUAIS
 ======================================== */
 
-/* Animação de brilho para o brasão central */
-@keyframes glow {
-    0%, 100% {
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-    }
-    50% {
-        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
-    }
-}
-
-/* Classe para aplicar brilho animado no brasão */
-.brasao-glow {
-    animation: glow 3s ease-in-out infinite;
-}
-
 /* ========================================
    2. CLASSES UTILITÁRIAS CUSTOMIZADAS
 ======================================== */
@@ -77,3 +62,106 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
+
+/* ========================================
+   5. ESTILOS DO MAPA LEAFLET
+======================================== */
+
+/* Container do mapa */
+#mapa-cervantes {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+#mapa-cervantes:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para popups do Leaflet */
+.leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-popup-tip {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.popup-cervantes .leaflet-popup-content {
+    margin: 12px 16px;
+    line-height: 1.4;
+}
+
+/* Marcadores customizados minimalistas */
+.marcador-cervantes {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.marcador-cervantes:hover {
+    transform: scale(1.15);
+    z-index: 1000;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Botões de navegação do mapa */
+.btn-empresa {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-empresa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+}
+
+.btn-empresa:active {
+    transform: translateY(0);
+    transition: all 0.1s ease;
+}
+
+/* Controles do Leaflet - tema escuro */
+.leaflet-control-zoom a {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leaflet-control-zoom a:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #4169E1;
+}
+
+/* Attribution customizado */
+.leaflet-control-attribution {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsividade do mapa */
+@media (max-width: 768px) {
+    #mapa-cervantes {
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+    
+    .btn-empresa {
+        font-size: 11px;
+        padding: 6px 10px;
+        margin: 2px;
+    }
+    
+    .leaflet-popup-content-wrapper {
+        max-width: 250px;
+    }
+}
+
+/* ========================================
+   FIM DOS ESTILOS DO MAPA
+======================================== */
