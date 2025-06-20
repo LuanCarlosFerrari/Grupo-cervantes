@@ -32,12 +32,39 @@
             <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
                 Estamos sempre prontos para atendê-lo. Escolha a empresa e entre em contato conosco.
             </p>
+        </section><!-- Seletor de Unidade -->
+        <section class="mb-8">
+            <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                <h2 class="text-xl font-bold mb-4 text-center">Selecione uma Unidade</h2>
+                <div class="max-w-2xl mx-auto">
+                    <select id="unidadeSelect" onchange="mostrarUnidade()"
+                        class="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-white/40 focus:outline-none">
+                        <option value="">Todas as Unidades</option>
+                        <optgroup label="Materiais de Construção">
+                            <option value="matriz">Cervantes - Matriz (Rinópolis)</option>
+                            <option value="parapua">Cervantes - Parapuã</option>
+                            <option value="iacri">Cervantes - Iacri</option>
+                            <option value="bastos">Cervantes - Bastos</option>
+                            <option value="osvaldocruz">Cervantes - Osvaldo Cruz</option>
+                        </optgroup>
+                        <optgroup label="Outros Negócios">
+                            <option value="autoposto">Cervantes - Auto Posto</option>
+                            <option value="pecuaria">BC Pecuária</option>
+                            <option value="trr">TRR Cervantes</option>
+                        </optgroup>
+                        <optgroup label="Transporte & Logística">
+                            <option value="transval-rinopolis">Transval - Rinópolis</option>
+                            <option value="transval-rondonopolis">Transval - Rondonópolis</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
         </section><!-- Contatos das Empresas -->
         <section class="mb-16">
-            <div class="grid md:grid-cols-2 gap-8">
-
+            <div id="unidades-grid" class="grid md:grid-cols-2 gap-8 transition-all duration-300">
                 <!-- Cervantes Materiais - Matriz -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                <div id="matriz" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
+                    data-categoria="materiais" data-keywords="cervantes matriz rinopolis materiais construcao">
                     <div class="flex items-center mb-4">
                         <img src="public/images/wood.png" alt="Materiais" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -50,10 +77,9 @@
                         <p><span class="font-semibold">Endereço:</span> Via de Acesso à Rinópolis, Rod. SP-425</p>
                         <p><span class="font-semibold">Horário:</span> Seg-Sex 7h-17h | Sáb 7h-12h</p>
                     </div>
-                </div>
-
-                <!-- Cervantes Parapuã -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                </div> <!-- Cervantes Parapuã -->
+                <div id="parapua" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
+                    data-categoria="materiais" data-keywords="cervantes parapua materiais construcao">
                     <div class="flex items-center mb-4">
                         <img src="public/images/wood.png" alt="Materiais" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -66,10 +92,9 @@
                         <p><span class="font-semibold">Endereço:</span> Av. São Paulo, 1194 - Centro</p>
                         <p><span class="font-semibold">Horário:</span> Seg-Sex 7h-17h | Sáb 7h-12h</p>
                     </div>
-                </div>
-
-                <!-- Cervantes Iacri -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                </div> <!-- Cervantes Iacri -->
+                <div id="iacri" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
+                    data-categoria="materiais" data-keywords="cervantes iacri materiais construcao">
                     <div class="flex items-center mb-4">
                         <img src="public/images/wood.png" alt="Materiais" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -82,10 +107,9 @@
                         <p><span class="font-semibold">Endereço:</span> Rua Bandeirantes, 741 - Centro</p>
                         <p><span class="font-semibold">Horário:</span> Seg-Sex 7h-17h | Sáb 7h-12h</p>
                     </div>
-                </div>
-
-                <!-- Cervantes Bastos -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                </div> <!-- Cervantes Bastos -->
+                <div id="bastos" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
+                    data-categoria="materiais" data-keywords="cervantes bastos materiais construcao">
                     <div class="flex items-center mb-4">
                         <img src="public/images/wood.png" alt="Materiais" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -98,10 +122,9 @@
                         <p><span class="font-semibold">Endereço:</span> Adhemar de Barros, 300 - Centro</p>
                         <p><span class="font-semibold">Horário:</span> Seg-Sex 7h-17h | Sáb 7h-12h</p>
                     </div>
-                </div>
-
-                <!-- Cervantes Osvaldo Cruz -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                </div> <!-- Cervantes Osvaldo Cruz -->
+                <div id="osvaldocruz" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
+                    data-categoria="materiais" data-keywords="cervantes osvaldo cruz materiais construcao">
                     <div class="flex items-center mb-4">
                         <img src="public/images/wood.png" alt="Materiais" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -114,10 +137,9 @@
                         <p><span class="font-semibold">Endereço:</span> Brasil, 1225 - Centro</p>
                         <p><span class="font-semibold">Horário:</span> Seg-Sex 7h-17h | Sáb 7h-12h</p>
                     </div>
-                </div>
-
-                <!-- Auto Posto -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                </div> <!-- Auto Posto -->
+                <div id="autoposto" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
+                    data-categoria="outros" data-keywords="cervantes auto posto combustivel gasolina">
                     <div class="flex items-center mb-4">
                         <img src="public/images/gas.png" alt="Auto Posto" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -130,10 +152,9 @@
                         <p><span class="font-semibold">WhatsApp:</span> (67) 99999-9999</p>
                         <p><span class="font-semibold">Horário:</span> 24 horas</p>
                     </div>
-                </div>
-
-                <!-- BC Pecuária -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                </div> <!-- BC Pecuária -->
+                <div id="pecuaria" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
+                    data-categoria="outros" data-keywords="bc pecuaria gado cria recria engorda">
                     <div class="flex items-center mb-4">
                         <img src="public/images/cow.png" alt="Pecuária" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -146,10 +167,9 @@
                         <p><span class="font-semibold">WhatsApp:</span> (67) 99999-9999</p>
                         <p><span class="font-semibold">Horário:</span> Seg-Sex 7h-17h</p>
                     </div>
-                </div>
-
-                <!-- TRR Cervantes -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
+                </div> <!-- TRR Cervantes -->
+                <div id="trr" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card" data-categoria="outros"
+                    data-keywords="trr cervantes petroleo combustivel distribuicao">
                     <div class="flex items-center mb-4">
                         <img src="public/images/transport.png" alt="TRR" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -163,7 +183,9 @@
                         <p><span class="font-semibold">Horário:</span> Seg-Sex 7h-17h</p>
                     </div>
                 </div> <!-- Transval -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:col-span-2">
+                <div id="transval-rinopolis"
+                    class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:col-span-2 unidade-card"
+                    data-categoria="transporte" data-keywords="transval rinopolis transportadora logistica">
                     <div class="flex items-center mb-4">
                         <img src="public/images/transport.png" alt="Transporte" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -183,10 +205,11 @@
                             <p><span class="font-semibold">Cobertura:</span> Regional e Nacional</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Transval Rondonópolis -->
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:col-span-2">
+                </div> <!-- Transval Rondonópolis -->
+                <div id="transval-rondonopolis"
+                    class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:col-span-2 unidade-card"
+                    data-categoria="transporte"
+                    data-keywords="transval rondonopolis mato grosso transportadora logistica">
                     <div class="flex items-center mb-4">
                         <img src="public/images/transport.png" alt="Transporte" class="w-12 h-12 mr-4 opacity-80">
                         <div>
@@ -307,6 +330,65 @@
             <p class="text-white/90 text-sm">Grupo Cervantes © 2025 - Todos os direitos reservados</p>
         </div>
     </footer>
+    <script>
+        // Função para mostrar/ocultar unidades baseado na seleção
+        function mostrarUnidade() {
+            const select = document.getElementById('unidadeSelect');
+            const selectedValue = select.value;
+            const unidadeCards = document.querySelectorAll('.unidade-card');
+            const gridContainer = document.getElementById('unidades-grid');
+
+            // Se nenhuma unidade for selecionada, mostra todas
+            if (selectedValue === '') {
+                unidadeCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+                // Restaura o grid normal
+                gridContainer.className = 'grid md:grid-cols-2 gap-8 transition-all duration-300';
+                return;
+            }
+
+            // Oculta todas as unidades primeiro
+            unidadeCards.forEach(card => {
+                card.style.display = 'none';
+            });
+
+            // Mostra apenas a unidade selecionada
+            const selectedCard = document.getElementById(selectedValue);
+            if (selectedCard) {
+                selectedCard.style.display = 'block';
+
+                // Ajusta o grid baseado no tipo de card
+                if (selectedValue.includes('transval')) {
+                    // Para Transval (cards largos), usa grid simples
+                    gridContainer.className = 'grid gap-8 transition-all duration-300 justify-items-center';
+                } else {
+                    // Para outros cards, centraliza em uma coluna
+                    gridContainer.className = 'grid gap-8 transition-all duration-300 justify-items-center max-w-md mx-auto';
+                }
+            }
+        }
+
+        // Função para sincronizar os selects (formulário e filtro)
+        function sincronizarSelects() {
+            const unidadeSelect = document.getElementById('unidadeSelect');
+            const empresaSelect = document.querySelector('select[class*="bg-white/10"]');
+
+            if (unidadeSelect && empresaSelect) {
+                unidadeSelect.addEventListener('change', function () {
+                    const value = this.value;
+                    if (value && empresaSelect.querySelector(`option[value="${value}"]`)) {
+                        empresaSelect.value = value;
+                    }
+                });
+            }
+        }
+
+        // Inicializa quando a página carrega
+        document.addEventListener('DOMContentLoaded', function () {
+            sincronizarSelects();
+        });
+    </script>
 
 </body>
 
