@@ -1,70 +1,61 @@
 /* 
  * GRUPO CERVANTES - PORTAL OFICIAL
- * Estilos customizados para interface interativa
+ * Estilos otimizados com Tailwind CSS
  * 
  * Estrutura:
- * 1. Animações e efeitos visuais
- * 2. Classes utilitárias customizadas
- * 3. Responsividade
- * 4. Compatibilidade cross-browser
+ * 1. Componentes únicos (não disponíveis no Tailwind)
+ * 2. Otimizações de performance
+ * 3. Responsividade avançada
  */
 
 /* ========================================
-   1. ANIMAÇÕES E EFEITOS VISUAIS
+   1. COMPONENTES ÚNICOS
 ======================================== */
+
+/* Remoção do CSS duplicado - agora usando Tailwind */
+/* Classes movidas para inline no HTML para melhor performance */
 
 /* ========================================
-   2. CLASSES UTILITÁRIAS CUSTOMIZADAS
+   2. OTIMIZAÇÕES DE PERFORMANCE
 ======================================== */
 
-/* Efeitos hover para quadrantes */
-.quadrante-hover:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+/* Prevenção de Layout Shift */
+* {
+    box-sizing: border-box;
 }
 
-/* Estilo específico para o polígono da Transval */
-.transval-polygon {
-    transition: all 0.3s ease;
+/* GPU acceleration para animações */
+.transform {
+    will-change: transform;
 }
 
-.transval-polygon:hover {
-    transform: scale(1.05) translateX(-50%);
+.hover\:scale-105:hover,
+.hover\:scale-110:hover {
+    will-change: transform;
 }
 
-/* Gradiente personalizado para fundos */
-.bg-cervantes-gradient {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-}
-
-/* Sombras customizadas */
-.custom-shadow {
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+/* Otimização de rendering */
+img {
+    content-visibility: auto;
 }
 
 /* ========================================
-   3. RESPONSIVIDADE
+   3. RESPONSIVIDADE AVANÇADA
 ======================================== */
 
-/* Ajustes para dispositivos móveis */
-@media (max-width: 768px) {
-    .mobile-text-adjust {
-        font-size: 0.875rem;
-    }
+/* Ajustes para telas muito pequenas */
+@media (max-width: 360px) {
+    .text-xs { font-size: 0.65rem; }
+    .p-2 { padding: 0.375rem; }
+}
+
+/* Ajustes para telas muito grandes */
+@media (min-width: 1920px) {
+    .container { max-width: 1800px; }
 }
 
 /* ========================================
-   4. COMPATIBILIDADE CROSS-BROWSER
-======================================== */
-
-/* Backdrop blur para navegadores mais antigos */
-.custom-backdrop-blur {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-/* ========================================
-   5. ESTILOS DO MAPA LEAFLET
+   4. ESTILOS DO MAPA LEAFLET (mantidos)
 ======================================== */
 
 /* Container do mapa */
@@ -164,4 +155,63 @@
 
 /* ========================================
    FIM DOS ESTILOS DO MAPA
+======================================== */
+
+/* ========================================
+   LAYOUT SHIFT PREVENTION
+======================================== */
+
+/* Prevent layout shifts during image loading */
+.quadrante-container {
+    contain: layout style paint;
+}
+
+.quadrante-image {
+    contain: layout style paint;
+}
+
+/* Ensure consistent sizing for all elements */
+.logo-central {
+    contain: layout style paint;
+}
+
+.trr-container {
+    contain: layout style paint;
+}
+
+/* Optimize rendering performance */
+body {
+    will-change: auto;
+}
+
+.quadrante-container:hover {
+    will-change: transform;
+}
+
+.logo-central:hover {
+    will-change: filter;
+}
+
+.trr-container:hover {
+    will-change: transform;
+}
+
+/* Smooth transitions without causing shifts */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Ensure critical images load with proper dimensions */
+img[loading="eager"] {
+    content-visibility: auto;
+}
+
+/* ========================================
+   END LAYOUT SHIFT PREVENTION
 ======================================== */
