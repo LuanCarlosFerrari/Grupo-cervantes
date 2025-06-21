@@ -142,10 +142,32 @@ let mapaGrupoCervantes;
 let marcadores = [];
 
 /**
+ * Função utilitária para detectar mobile
+ */
+function isMobile() {
+    return window.innerWidth <= 640;
+}
+
+/**
+ * Ajusta dinamicamente o tamanho do mapa para mobile
+ */
+function ajustarAlturaMapa() {
+    const mapaDiv = document.getElementById('mapa-cervantes');
+    if (mapaDiv) {
+        if (isMobile()) {
+            mapaDiv.style.height = '220px';
+        } else {
+            mapaDiv.style.height = '400px';
+        }
+    }
+}
+
+/**
  * Inicializa o mapa Leaflet
  */
 function inicializarMapa() {
     console.log('Iniciando inicialização do mapa...');
+    ajustarAlturaMapa();
 
     try {
         // Verificar se o container existe
@@ -288,15 +310,15 @@ function getIconeSvg(tipo) {
 }
 
 /**
- * Cria conteúdo HTML para o popup
+ * Melhora popups para mobile
  */
 function criarConteudoPopup(empresa) {
     return `
-        <div class="popup-empresa">
-            <h3 style="margin: 0 0 8px 0; color: #333; font-size: 16px; font-weight: bold;">
+        <div class="popup-empresa" style="max-width: 90vw; font-size: 13px;">
+            <h3 style="margin: 0 0 8px 0; color: #333; font-size: 15px; font-weight: bold;">
                 ${empresa.nome}
             </h3>
-            <p style="margin: 0 0 8px 0; color: #666; font-size: 14px;">
+            <p style="margin: 0 0 8px 0; color: #666; font-size: 13px;">
                 ${empresa.subtitulo}
             </p>
             <div style="font-size: 12px; color: #555; line-height: 1.4;">
@@ -578,6 +600,7 @@ function mostrarTodasEmpresas() {
 // Inicializar quando a página carregar
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM carregado, iniciando mapa...');
+    ajustarAlturaMapa();
 
     // Verificar se o container do mapa existe
     const container = document.getElementById('mapa-cervantes');
@@ -601,6 +624,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Redimensionar mapa quando a janela mudar de tamanho
 window.addEventListener('resize', function () {
+    ajustarAlturaMapa();
     if (mapaGrupoCervantes) {
         setTimeout(() => {
             mapaGrupoCervantes.invalidateSize();

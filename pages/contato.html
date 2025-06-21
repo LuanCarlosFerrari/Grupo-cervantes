@@ -26,18 +26,19 @@
     </header>
 
     <!-- Conteúdo Principal -->
-    <main class="pt-16 md:pt-20 px-4 md:px-8 max-w-6xl mx-auto"> <!-- Hero Section -->
-        <section class="text-center mb-12">
-            <h1 class="text-3xl md:text-5xl font-bold mb-4">Entre em Contato</h1>
-            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+    <main class="pt-14 md:pt-20 px-2 sm:px-4 md:px-8 max-w-6xl mx-auto"> <!-- Hero Section -->
+        <section class="text-center mb-8 md:mb-12">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-2 md:mb-4">Entre em Contato</h1>
+            <p class="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
                 Estamos sempre prontos para atendê-lo. <br> Escolha a empresa e entre em contato conosco.
             </p>
         </section><!-- Seletor de Unidade -->
-        <section class="mb-8">
-            <div class="bg-white/5 backdrop-blur-md rounded-lg p-6">
-                <h2 class="text-xl font-bold mb-4 text-center">Selecione uma Unidade</h2>
-                <div class="max-w-2xl mx-auto"> <select id="unidadeSelect" onchange="mostrarUnidade()"
-                        class="w-full p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none"
+        <section class="mb-6 md:mb-8">
+            <div class="bg-white/5 backdrop-blur-md rounded-lg p-3 sm:p-4 md:p-6">
+                <h2 class="text-lg md:text-xl font-bold mb-2 md:mb-4 text-center">Selecione uma Unidade</h2>
+                <div class="max-w-2xl mx-auto">
+                    <select id="unidadeSelect" onchange="mostrarUnidade()"
+                        class="w-full p-2 sm:p-3 border border-white/20 rounded-lg focus:border-white/40 focus:outline-none"
                         style="background-color: white; color: black;">
                         <option value="">Todas as Unidades</option>
                         <optgroup label="Materiais de Construção">
@@ -61,13 +62,13 @@
                 </div>
             </div>
         </section><!-- Contatos das Empresas -->
-        <section class="mb-16">
-            <div id="unidades-grid" class="grid md:grid-cols-2 gap-8 transition-all duration-300">
+        <section class="mb-10 md:mb-16">
+            <div id="unidades-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 transition-all duration-300">
                 <!-- Cervantes Materiais - Matriz -->
                 <div id="matriz" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
                     data-categoria="materiais" data-keywords="cervantes matriz rinopolis materiais construcao">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/wood.png" alt="Materiais"
+                        <img src="../public/images/wood.png" alt="Materiais" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Cervantes - Matriz</h3>
@@ -83,7 +84,7 @@
                 <div id="parapua" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
                     data-categoria="materiais" data-keywords="cervantes parapua materiais construcao">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/wood.png" alt="Materiais"
+                        <img src="../public/images/wood.png" alt="Materiais" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Cervantes - Parapuã</h3>
@@ -99,7 +100,7 @@
                 <div id="iacri" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
                     data-categoria="materiais" data-keywords="cervantes iacri materiais construcao">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/wood.png" alt="Materiais"
+                        <img src="../public/images/wood.png" alt="Materiais" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Cervantes - Iacri</h3>
@@ -115,7 +116,7 @@
                 <div id="bastos" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
                     data-categoria="materiais" data-keywords="cervantes bastos materiais construcao">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/wood.png" alt="Materiais"
+                        <img src="../public/images/wood.png" alt="Materiais" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Cervantes - Bastos</h3>
@@ -131,7 +132,7 @@
                 <div id="osvaldocruz" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
                     data-categoria="materiais" data-keywords="cervantes osvaldo cruz materiais construcao">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/wood.png" alt="Materiais"
+                        <img src="../public/images/wood.png" alt="Materiais" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Cervantes - Osvaldo Cruz</h3>
@@ -147,7 +148,7 @@
                 <div id="autoposto" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
                     data-categoria="outros" data-keywords="cervantes auto posto combustivel gasolina">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/gas.png" alt="Auto Posto"
+                        <img src="../public/images/gas.png" alt="Auto Posto" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Cervantes</h3>
@@ -163,7 +164,7 @@
                 <div id="pecuaria" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card"
                     data-categoria="outros" data-keywords="bc pecuaria gado cria recria engorda">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/cow.png" alt="Pecuária"
+                        <img src="../public/images/cow.png" alt="Pecuária" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">BC Pecuária</h3>
@@ -179,7 +180,7 @@
                 <div id="trr" class="bg-white/5 backdrop-blur-md rounded-lg p-6 unidade-card" data-categoria="outros"
                     data-keywords="trr cervantes petroleo combustivel distribuicao">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/transport.png" alt="TRR"
+                        <img src="../public/images/transport.png" alt="TRR" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">TRR Cervantes</h3>
@@ -196,7 +197,7 @@
                     class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:col-span-2 unidade-card"
                     data-categoria="transporte" data-keywords="transval rinopolis transportadora logistica">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/transport.png" alt="Transporte"
+                        <img src="../public/images/transport.png" alt="Transporte" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Transval - Rinópolis</h3>
@@ -221,7 +222,7 @@
                     data-categoria="transporte"
                     data-keywords="transval rondonopolis mato grosso transportadora logistica">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/transport.png" alt="Transporte"
+                        <img src="../public/images/transport.png" alt="Transporte" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Transval - Rondonópolis</h3>
@@ -246,7 +247,7 @@
                 <div id="transval-sumare" class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:col-span-2 unidade-card"
                     data-categoria="transporte" data-keywords="transval sumare sao paulo transportadora logistica">
                     <div class="flex items-center mb-4">
-                        <img src="../public/images/transport.png" alt="Transporte"
+                        <img src="../public/images/transport.png" alt="Transporte" width="48" height="48" loading="lazy"
                             class="w-12 h-12 mr-4 opacity-80 rounded-full">
                         <div>
                             <h3 class="text-xl font-bold">Transval - Sumaré</h3>
@@ -271,11 +272,11 @@
         </section>
 
         <!-- Formulário de Contato -->
-        <section class="mb-16">
-            <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 md:p-8">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Envie sua Mensagem</h2>
-                <form class="max-w-2xl mx-auto space-y-6">
-                    <div class="grid md:grid-cols-2 gap-4">
+        <section class="mb-10 md:mb-16">
+            <div class="bg-white/5 backdrop-blur-md rounded-lg p-3 sm:p-4 md:p-8">
+                <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">Envie sua Mensagem</h2>
+                <form class="max-w-2xl mx-auto space-y-4 md:space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                         <div>
                             <label class="block text-white/90 mb-2">Nome Completo</label>
                             <input type="text"
@@ -289,7 +290,7 @@
                                 style="background-color: white; color: black;" placeholder="seu@email.com">
                         </div>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                         <div>
                             <label class="block text-white/90 mb-2">Telefone</label>
                             <input type="tel"
@@ -337,25 +338,24 @@
                 </form>
             </div>
         </section>
-
         <!-- Informações Adicionais -->
-        <section class="mb-16">
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 text-center">
-                    <h3 class="text-xl font-bold mb-2">Atendimento</h3>
-                    <p class="text-white/80">
+        <section class="mb-10 md:mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                <div class="bg-white/5 backdrop-blur-md rounded-lg p-4 md:p-6 text-center">
+                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-4">Atendimento</h3>
+                    <p class="text-white/80 text-xs md:text-base">
                         Nossa equipe está pronta para atendê-lo nos horários comerciais de cada unidade.
                     </p>
                 </div>
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 text-center">
-                    <h3 class="text-xl font-bold mb-2">Resposta Rápida</h3>
-                    <p class="text-white/80">
+                <div class="bg-white/5 backdrop-blur-md rounded-lg p-4 md:p-6 text-center">
+                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-4">Resposta Rápida</h3>
+                    <p class="text-white/80 text-xs md:text-base">
                         Respondemos todas as mensagens em até 24 horas úteis.
                     </p>
                 </div>
-                <div class="bg-white/5 backdrop-blur-md rounded-lg p-6 text-center">
-                    <h3 class="text-xl font-bold mb-2">Suporte Especializado</h3>
-                    <p class="text-white/80">
+                <div class="bg-white/5 backdrop-blur-md rounded-lg p-4 md:p-6 text-center">
+                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-4">Suporte Especializado</h3>
+                    <p class="text-white/80 text-xs md:text-base">
                         Cada empresa possui atendimento especializado em seu segmento.
                     </p>
                 </div>
